@@ -24,7 +24,7 @@ const UserProfile = () => {
   },[]);
 
   const sendRequest=async()=>{
-    const res=await axios.put(`http://localhost:5000/api/user/update/${userData[0]._id}`,{
+    const res=await axios.put(`https://flixxitmoviesbackend-10e8.onrender.com/api/user/update/${userData[0]._id}`,{
       name:inputs.name,email:inputs.email,password:inputs.password}).catch(err=>console.log(err))
       const data=await res.data;
       return data;
