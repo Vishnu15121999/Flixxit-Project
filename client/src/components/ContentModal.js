@@ -109,13 +109,13 @@ const ContentModal = ({ children, media_type, id }) => {
                                             <IconButton><ThumbUpIcon sx={{color : (isLiked) ? 'red' : 'white'}} onClick={() => setIsliked(!isLiked)} color='warning'></ThumbUpIcon></IconButton>
                                         </Box>
                                         <div className='buttons'>
-                                            <Button sx={{ marginRight: '10px' }}
+                                            <Button className='modal-button' sx={{ marginRight: '10px',fontSize:'10px'}}
                                                 variant='contained'
                                                 startIcon={<YouTubeIcon />}
                                                 color='secondary'
                                                 target='_blank'
                                                 href={`https://www.youtube.com/watch?v=${video}`}>Watch The Trailer</Button>
-                                            <Button onClick={() => dispatch(addMovieToWatchList(content))} variant='contained' color='secondary'>Add to Fovourites</Button>
+                                            <Button sx={{fontSize:'10px'}} className='modal-button' onClick={() => dispatch(addMovieToWatchList(content))} variant='contained' color='secondary'>Add to Fovourites</Button>
                                         </div>
                                     </div>
                                 </div>

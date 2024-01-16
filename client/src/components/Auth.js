@@ -9,7 +9,7 @@ import { setUser } from '../store/index';
 
 const Auth = () => {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-  console.log(isLoggedIn);
+  //console.log(isLoggedIn);
   const navigate = useNavigate()
   const dispatch = useDispatch();
   const [logged,setLogged]=useState(false);

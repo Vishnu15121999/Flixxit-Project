@@ -385,3 +385,90 @@
   justify-content: center;
   align-items: center;
 }
+@media only screen and (max-width:455px){
+  .header-box-buttons{
+    display: flex;
+    margin-right: 105px;
+  }
+  .header-toolbar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    width: 100%;
+  }
+  .header-tabs{
+    flex-direction: column;
+  }
+  .ContentModal{
+    width: 450px;
+    max-height: 450px;
+    display: flex;
+  }
+  .video-frame{
+    width: 450px;
+    height: 400px;
+    margin-left: 50px;
+  }
+  .content-modal-container{
+    width: 400px;
+    height: 400px;
+  }
+  .content-modal-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contectImg{
+    width: 90px;
+    height: 120px;
+  }
+  .contentDetails{
+    font-size: 10px;
+  }
+  .buttons{
+    display: flex;
+    font-size: x-small;
+  }
+  .modal-button{
+    width: 100px;
+    height: 50px;
+    font-size: x-small;
+  }
+  .app-header-section{
+    width: 100%;
+  }
+  .tabs-box{
+    display: flex;
+    flex-direction: column;
+  }
+  .about-container{
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  .advertise-subpage{
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 300px;
+  }
+  .advertise-page{
+    width: 420px;
+    height: fit-content;
+  }
+  .advertise-paragraph{
+    width: 450px;
+    font-size: 10px;
+    padding: none;
+    margin: none;
+  }
+  .about-footer{
+    display: none;
+    visibility: hidden;
+  }
+}

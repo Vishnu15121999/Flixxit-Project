@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { AppBar, Box, Button, IconButton, MenuItem, Tab, Tabs, Toolbar, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { authActions } from '../store';
 import { Dropdown } from '@mui/base/Dropdown';
 import { Menu } from '@mui/base/Menu';
@@ -15,10 +15,10 @@ const Header = () => {
     const [value, setValue] = useState();
     //const [name, setName] = useState([]);
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-    const userData=useSelector((state)=>state.user.userDetails);
-    const navigate=useNavigate();
+    const userData = useSelector((state) => state.user.userDetails);
+    const navigate = useNavigate();
 
-    const hanldeEdit=()=>{
+    const hanldeEdit = () => {
         navigate('/user');
     }
 
@@ -29,21 +29,21 @@ const Header = () => {
     };
 
     return (
-        <AppBar position='sticky'
+        <AppBar className='header-appbar' position='sticky'
             sx={{ background: "linear-gradient(90deg, rgba(2,0,36,1) 38%, rgba(5,5,5,1) 60%, rgba(99,33,52,1) 100%)" }}>
-            <Toolbar>
+            <Toolbar className='header-toolbar'>
                 <h1 className='web-title' variant='h4'>Flixxit Liv</h1>
-                {isLoggedIn && <Box display={'flex'} marginLeft='auto'>
-                    <Tabs textColor='inherit' value={value} onChange={(e, val) => setValue(val)}>
+                {isLoggedIn && <Box className="tabs-box" display={'flex'} marginLeft='auto'>
+                    <Tabs className='header-tabs' textColor='inherit' value={value} onChange={(e, val) => setValue(val)}>
                         <Tab LinkComponent={Link} to="/trending" label="Trending" />
                         <Tab LinkComponent={Link} to="/tvShow" label="TV Shows" />
                         <Tab LinkComponent={Link} to="/movies" label="Movies" />
                         <Tab LinkComponent={Link} to="/search" label="Search" />
                         <Tab LinkComponent={Link} to="/myList" label="My List" />
-                        <Tab LinkComponent={Link} to='/about' label='About'/>
+                        <Tab LinkComponent={Link} to='/about' label='About' />
                     </Tabs>
                 </Box>}
-                <Box display={'flex'} marginLeft='auto'>
+                <Box className="header-box-buttons" display={'flex'} marginLeft='auto'>
                     {!isLoggedIn && <><Button LinkComponent={Link} to="/auth" sx={{ margin: 1, borderRadius: 10 }} color='warning' variant='contained'>Login</Button>
                         <Button LinkComponent={Link} to="/auth" sx={{ margin: 1, borderRadius: 10 }} color='warning' variant='contained'>Signup</Button></>}
                     {isLoggedIn &&
@@ -51,7 +51,7 @@ const Header = () => {
                             <MenuButton><IconButton><PersonOutlineIcon></PersonOutlineIcon></IconButton></MenuButton>
                             <Menu slots={{ listbox: Listbox }}>
                                 <MenuItem><Typography>Hello {userData[0]?.name}</Typography></MenuItem>
-                                <MenuItem sx={{marginTop:1}} onClick={createHandleMenuClick('Profile')}><Typography onClick={hanldeEdit}>Edit Profile</Typography></MenuItem>
+                                <MenuItem sx={{ marginTop: 1 }} onClick={createHandleMenuClick('Profile')}><Typography onClick={hanldeEdit}>Edit Profile</Typography></MenuItem>
                                 <MenuItem onClick={createHandleMenuClick('Log out')}><Typography onClick={() => dispatch(authActions.logout())} LinkComponent={Link} to='/auth'>Logout</Typography></MenuItem>
                             </Menu>
                         </Dropdown>}

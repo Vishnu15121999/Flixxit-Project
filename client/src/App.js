@@ -22,10 +22,10 @@ const App = () => {
     <React.Fragment>
       <ErrorBoundary FallbackComponent={ErrorComponent}
         onError={() => console.log("Error Happened")}>
-        <header>
+        <header className='app-header-section'>
           <Header />
         </header>
-        <main>
+        <main className='app-main'>
           <Routes>
             {!isLoggedIn ? (
               <>
